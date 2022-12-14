@@ -63,7 +63,7 @@ void loop() {
   else {
     Serial.print(distanceincm);
     Serial.println(" cm");
-    tone(buzzer, sound);
+    tone(soundbuzzer, sound);
   }
   
   delay(300);
