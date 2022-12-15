@@ -43,14 +43,16 @@ void loop() {
       digitalWrite(LEDlampGreen, LOW);
   }
   
-  if (distanceincm < 7) {
+  if (distanceincm <= 6 && distanceincm >= 4) {
     digitalWrite(LEDlampYellow, HIGH);
+    Serial.println("Really Close - Be ready to stop");
 }
   else {
     digitalWrite(LEDlampYellow,LOW);
   }
   if (distanceincm < 4) {
     digitalWrite(LEDlampRed, HIGH);
+    Serial.println("STOP NOW");
     tone(soundbuzzer, sound);
 }
   else {
