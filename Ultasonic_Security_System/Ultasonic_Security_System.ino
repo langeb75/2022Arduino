@@ -35,8 +35,9 @@ void loop() {
   durationindigit = pulseIn(echoPin, HIGH);
   distanceincm = (durationindigit/5) / 29.1;
  
-  if (distanceincm < 11) {
+  if (distanceincm <= 10 && distanceincm >= 7) {
       digitalWrite(LEDlampGreen, HIGH);
+      Serial.println("Getting Close - Proceed with caution");
 }
   else {
       digitalWrite(LEDlampGreen, LOW);
@@ -57,7 +58,7 @@ void loop() {
   }
  
   if (distanceincm > 10 || distanceincm <= 0){
-    Serial.println("Outside the permissible range of distances");
+    Serial.println("We have not detected your car yet - Proceed Forward");
     noTone(soundbuzzer);
   }
   else {
