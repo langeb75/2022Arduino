@@ -57,6 +57,7 @@ void loop() {
 }
   else {
     digitalWrite(LEDlampRed,LOW);
+    noTone(soundbuzzer);
   }
  
   if (distanceincm > 10 || distanceincm <= 0){
@@ -70,5 +71,5 @@ void loop() {
     
   }
   
-  delay(300);
+  delay(1000);
 }
